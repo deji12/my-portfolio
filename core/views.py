@@ -7,7 +7,7 @@ from django.urls import reverse
 
 def home(request):
 
-    projects = Project.objects.filter(is_active=True)
+    projects = Project.objects.filter(is_active=True).order_by('order_number')
     recognitions = Recognition.objects.filter(is_active=True)
     resume = Resume.objects.last()
 
