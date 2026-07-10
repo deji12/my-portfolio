@@ -15,6 +15,7 @@ class Project(models.Model):
     thumbnail = CloudinaryField()
     title = models.CharField(max_length=225)
     description = models.TextField()
+    order_number = models.IntegerField(default=1)
     technologies = models.ManyToManyField(Technology)
     is_active = models.BooleanField(default=True)
     github = models.URLField(null=True, blank=True)
